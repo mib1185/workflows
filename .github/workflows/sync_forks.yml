@@ -1,0 +1,26 @@
+name: Sync my forks
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        include:
+          - name: homeassistant-core
+            branch: dev
+          - name: homeassistant-devices
+            branch: main
+          - name: homeassistant-frontend
+            branch: dev
+          - name: homeassistant-hassil
+            branch: main
+          - name: homeassistant-intents
+            branch: main
+    steps:
+      - name: sync ${{ matrix.name }}/${{ matrix.branch }}
+        run: gh repo sync ${{ github.repository_owner }}/${{ matrix.name }} --branch ${{ matrix.branch }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
