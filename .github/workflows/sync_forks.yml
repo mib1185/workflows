@@ -23,6 +23,8 @@ jobs:
             branch: main
           - name: python-fritzhome
             branch: master
+          - name: pyais
+            branch: master
     steps:
       - name: sync ${{ matrix.name }}/${{ matrix.branch }}
         run: gh repo sync ${{ github.repository_owner }}/${{ matrix.name }} --branch ${{ matrix.branch }}
