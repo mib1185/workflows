@@ -21,9 +21,9 @@ jobs:
             branch: main
           - name: homeassistant-intents
             branch: main
-          - name: homeassistant-io
+          - name: home-assistant.io
             branch: current
-          - name: homeassistant-io
+          - name: home-assistant.io
             branch: next
           - name: python-fritzhome
             branch: master
