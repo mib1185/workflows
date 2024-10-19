@@ -1,7 +1,7 @@
 name: Sync my forks
 on:
   schedule:
-    - cron:  '*/15 * * * *'
+    - cron:  '*/20 * * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -21,6 +21,10 @@ jobs:
             branch: main
           - name: homeassistant-intents
             branch: main
+          - name: homeassistant-io
+            branch: current
+          - name: homeassistant-io
+            branch: next
           - name: python-fritzhome
             branch: master
           - name: pyais
