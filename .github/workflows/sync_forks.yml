@@ -18,22 +18,22 @@ jobs:
         include:
           - name: homeassistant-core
             branch: dev
-          - name: homeassistant-devices
-            branch: main
+          # - name: homeassistant-devices
+          #   branch: main
           - name: homeassistant-frontend
             branch: dev
-          - name: homeassistant-hassil
-            branch: main
+          # - name: homeassistant-hassil
+          #   branch: main
           - name: homeassistant-intents
             branch: main
           - name: home-assistant.io
             branch: current
           - name: home-assistant.io
             branch: next
-          - name: python-fritzhome
-            branch: master
-          - name: pyais
-            branch: master
+          # - name: python-fritzhome
+          #   branch: master
+          # - name: pyais
+          #   branch: master
     steps:
       - name: sync ${{ matrix.name }}/${{ matrix.branch }}
         run: gh repo sync ${{ github.repository_owner }}/${{ matrix.name }} --branch ${{ matrix.branch }}
